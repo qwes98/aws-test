@@ -27,4 +27,7 @@ echo "> $JAR_NAME 에 실행권한 추가"
 chmod +x $JAR_NAME
 
 echo "> $JAR_NAME 실행"
-nohup java -jar $JAR_NAME 2>&1 &
+nohup java -jar \
+  -Dspring.config.location=classpath:/application.properties,/home/ubuntu/app/application-prod-db.properties \
+  -Dspring.profiles.active=prod \
+  $JAR_NAME 2>&1 &
