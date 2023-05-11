@@ -28,6 +28,6 @@ chmod +x $JAR_NAME
 
 echo "> $JAR_NAME 실행"
 nohup java -jar \
-  -Dspring.config.location=classpath:/application.properties,/home/ubuntu/app/application-prod-db.properties \
+  -Dspring.config.location=classpath:/application.properties,classpath:/application-prod.properties,/home/ubuntu/app/application-prod-db.properties \
   -Dspring.profiles.active=prod \
   $JAR_NAME 2>&1 &
